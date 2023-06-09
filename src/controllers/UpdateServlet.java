@@ -43,6 +43,7 @@ public class UpdateServlet extends HttpServlet {
             //DB更新処理
             em.getTransaction().begin();
             em.getTransaction().commit();
+            request.getSession().setAttribute("flush","登録が完了しました。");
             em.close();
 
             //セッションスコープ上の不要データの削除
